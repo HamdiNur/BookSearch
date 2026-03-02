@@ -12,7 +12,6 @@ const Navbar = () => {
   return (
     <nav className="navbar" id="navbar">
       <div className="container navbar-content flex">
-
         <div className="brand-and-toggler flex flex-sb">
           <Link to="/" className="navbar-brand flex">
             <img src={logoImg} alt="site logo" />
@@ -34,7 +33,7 @@ const Navbar = () => {
         <div
           className={
             toggleMenu
-              ? "navbar-collapse show-navbar"
+              ? "navbar-collapse show-navbar-collapse"
               : "navbar-collapse"
           }
         >
@@ -58,7 +57,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   );
