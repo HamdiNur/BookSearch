@@ -6,20 +6,21 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import BookDetails from './components/BookDetails/BookDetails';
 import BookList from './components/BookList/BookList';
+import { AppProvider } from './context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <BrowserRouter>
- <Routes>
- <Route path= "/" element={<Home/>}/>
- <Route path= "about" element={<About/>}/>
- <Route path= "book" element={<BookList/>}/>
- <Route path= "/book/:id" element={<BookDetails/>}/>
-
-
-
- </Routes>
- </BrowserRouter>
+  <AppProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="book" element={<BookList />} />
+        <Route path="/book/:id" element={<BookDetails />} />
+      </Routes>
+    </BrowserRouter>
+  </AppProvider>
 );
+
 
