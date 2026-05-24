@@ -18,6 +18,7 @@ const AppProvider = ({ children }) => {
 
       const { docs } = data;
 
+
       if (docs) {
         const newBooks = docs.map((item) => {
           const {
@@ -67,6 +68,8 @@ const AppProvider = ({ children }) => {
         resultTitle,
         searchTerm,
         setSearchTerm,
+       setResultTitle
+
       }}
     >
       {children}
