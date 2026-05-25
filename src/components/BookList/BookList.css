@@ -4,60 +4,70 @@
     background-color: #f8f9fa;
 }
 
-.booklist-content {
-    gap: 3rem;
+.booklist-content{
+    display:grid;
+    grid-template-columns: repeat(4,1fr); /* 4 books per row */
+    gap:2rem;
 }
 
-/* Fixed: .book.item → .book-item */
-.book-item {
-    padding: 3rem 2rem;
-    border-radius: 4px;
-    background-color: var(--white-color);
-    box-shadow: rgb(0 0 0 / 5%) 0px 5px 15px 0px;
-    transition: var(--transition);
+.book-item{
+    padding:2rem 1rem;
+    border-radius:8px;
+    background-color:var(--white-color);
+    box-shadow:rgb(0 0 0 / 5%) 0px 5px 15px;
+    transition:var(--transition);
 }
 
-/* Fixed hover shadow */
-.book-item:hover {
-    box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px 0px;
-    transform: translateY(-5px);
+.book-item:hover{
+    transform:translateY(-5px);
+    box-shadow:rgb(0 0 0 / 15%) 0px 5px 15px;
 }
 
-.book-item-img img {
-    max-width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+.book-item-img img{
+    width:100%;
+    max-width:120px;   /* smaller covers */
+    height:180px;
+    object-fit:cover;
+    margin:auto;
+    display:block;
 }
 
-.book-item-info {
-    margin-top: 2rem;
+.book-item-info{
+    margin-top:1.5rem;
 }
 
-.book-item-info-item.title {
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
+.book-item-info-item.title{
+    line-height:1.4;
+    margin-bottom:.8rem;
 }
 
-.book-item-info-item.author {
-    line-height: 1.4;
-    margin-bottom: 4px;
+.book-item-info-item.author{
+    margin-bottom:4px;
 }
 
-.book-item-info-item:not(.book-item-info-item.title) span:last-child {
-    opacity: 0.8;
+.book-item-info-item.publish-year{
+    opacity:.6;
+    font-style:italic;
+    font-size:14px;
 }
 
-/* Fixed: pulish → publish */
-.book-item-info-item.publish-year {
-    opacity: 0.6;
-    font-style: italic;
-    font-size: 14px;
+/* tablet */
+@media screen and (max-width:992px){
+    .booklist-content{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
-/* Responsive */
-@media screen and (max-width:768px) {
-    .booklist-content {
-        grid-template-columns: 1fr;
+/* small tablet */
+@media screen and (max-width:768px){
+    .booklist-content{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* phone */
+@media screen and (max-width:500px){
+    .booklist-content{
+        grid-template-columns:1fr;
     }
 }
