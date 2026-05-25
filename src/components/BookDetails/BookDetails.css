@@ -1,1 +1,43 @@
- 
+ .bookdetails-content{
+    display:grid;
+    grid-template-columns:300px auto;
+    gap:4rem;
+    align-items:flex-start;
+}
+
+.bookdetails-img img{
+    width:100%;
+    max-width:300px;
+    border-radius:8px;
+}
+
+.back-btn{
+    margin-bottom:2rem;
+    padding:1rem 1.5rem;
+    border:none;
+    cursor:pointer;
+}
+
+.bookdetails-title{
+    margin-bottom:2rem;
+}
+
+.bookdetails-item{
+    margin-bottom:1.5rem;
+}
+
+.description p{
+    margin-top:1rem;
+    line-height:1.8;
+}
+
+@media screen and (max-width:768px){
+
+.bookdetails-content{
+    grid-template-columns:1fr;
+}
+
+.bookdetails-img{
+    text-align:center;
+}
+}
